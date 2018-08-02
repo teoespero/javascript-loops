@@ -1,0 +1,72 @@
+<!-- 	
+	Teo Espero
+	BS Cloud and Systems Administration
+	Western Governors University-
+
+	#Web-Dev-Bootcamp-Udemy
+-->
+
+<! DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="normalize.css" rel="stylesheet" type="text/css">
+			<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+			<link href="bootstrap.css" rel="stylesheet" type="text/css">
+			<link href="galery.css" rel="stylesheet" type="text/css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+			<script type="text/javascript" src="bootstrap.js"></script>
+			<meta charset="utf-8">
+			<title>teoespero.com | Javascript Programming - Guessing Game</title>
+			<meta name="description" content="">
+  			<meta name="author" content="teoespero">
+  			<script type="text/javascript">
+
+  				var theNumber = 0
+  				function getNumber(){
+  					return theNumber = Math.floor(Math.random() * 9) + 1;     // returns a random integer from 1 to 10
+  				}
+
+  				function myFunction (theirGuess) {
+  					// body...
+  					var secretNumber = Number(theNumber);
+  					var userGuess = Number(theirGuess);
+  					if (isNaN(userGuess)){
+  						document.getElementById('theResult').value = "Please enter a number.";	
+			  		}
+			  		else {
+			  			if (userGuess < secretNumber){
+			  				document.getElementById('theResult').value = userGuess +". Your guess is too low.";
+			  			}
+			  			else if (userGuess > secretNumber) {
+							document.getElementById('theResult').value =  userGuess +". Your guess is too high.";						
+						}
+						else {
+			  				document.getElementById('theResult').value = userGuess + ". That's it. You guessed it right.";	
+			  			}
+			  		}
+  				}
+  			</script>
+	</head>
+	<body onload="getNumber()">
+		<div class="container">
+			<h2>Guessing Game</h2>
+			<form class="form-inline">
+				<div class="form-group">
+				    <label for="yourGuess">Your guess</label>
+				    &nbsp;&nbsp;<input type="text" class="form-control" id="yourGuess" placeholder="100" name="yourGuess">
+				</div>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-warning" onclick="myFunction(document.getElementById('yourGuess').value)">Validate <i class="fas fa-angle-double-right"></i>
+				</button>
+				<div class="form-group">
+					<label for="theResult">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result</label>
+					&nbsp;&nbsp;<input type="text" class="form-control" id="theResult" placeholder="theResult" name="theResult" size="30">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
