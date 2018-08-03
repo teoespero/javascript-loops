@@ -22,51 +22,16 @@
 			<title>teoespero.com | Javascript Programming - Guessing Game</title>
 			<meta name="description" content="">
   			<meta name="author" content="teoespero">
-  			<script type="text/javascript">
 
-  				var theNumber = 0
-  				function getNumber(){
-  					return theNumber = Math.floor(Math.random() * 9) + 1;     // returns a random integer from 1 to 10
-  				}
-
-  				function myFunction (theirGuess) {
-  					// body...
-  					var secretNumber = Number(theNumber);
-  					var userGuess = Number(theirGuess);
-  					if (isNaN(userGuess)){
-  						document.getElementById('theResult').value = "Please enter a number.";	
-			  		}
-			  		else {
-			  			if (userGuess < secretNumber){
-			  				document.getElementById('theResult').value = userGuess +". Your guess is too low.";
-			  			}
-			  			else if (userGuess > secretNumber) {
-							document.getElementById('theResult').value =  userGuess +". Your guess is too high.";						
-						}
-						else {
-			  				document.getElementById('theResult').value = userGuess + ". That's it. You guessed it right.";	
-			  			}
-			  		}
-  				}
-  			</script>
+  			<script type="text/javascript" src="problemSet.js"></script>
 	</head>
-	<body onload="getNumber()">
+	<body>
 		<div class="container">
-			<h2>Guessing Game</h2>
-			<form class="form-inline">
-				<div class="form-group">
-				    <label for="yourGuess">Your guess</label>
-				    &nbsp;&nbsp;<input type="text" class="form-control" id="yourGuess" placeholder="100" name="yourGuess">
-				</div>
-				
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<button type="button" class="btn btn-warning" onclick="myFunction(document.getElementById('yourGuess').value)">Validate <i class="fas fa-angle-double-right"></i>
-				</button>
-				<div class="form-group">
-					<label for="theResult">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result</label>
-					&nbsp;&nbsp;<input type="text" class="form-control" id="theResult" placeholder="theResult" name="theResult" size="30">
-				</div>
-			</form>
+			<h1>While Loops Problem Set</h1>
+			<p><script type="text/javascript">setOne();</script></p>
+			<p><script type="text/javascript">setTwo();</script></p>
+			<p><script type="text/javascript">setThree();</script></p>
+			<p><script type="text/javascript">setFour();</script></p>
 		</div>
 	</body>
 </html>
